@@ -1,0 +1,111 @@
+.content {
+  padding: 25px;
+  position: relative;
+}
+
+.cardinal-directions {
+  position: absolute;
+  opacity: .5;
+}
+
+.direction-icon {
+  position: absolute;
+  font-size: 22px;
+  color: red;
+}
+
+.north {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.east {
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.south {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.west {
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.grid {
+  width: 100%;
+  height: calc(100vw - 50px);
+  display: grid;
+  grid-template-columns: repeat(8, calc(calc(100vw - 58px) / 8));
+  grid-template-rows: repeat(8, calc(calc(100vw - 58px) / 8));
+  border: 4px solid white;
+}
+
+.table-bg {
+  position: absolute;
+  width: calc(100% - 50px);
+}
+
+.utils {
+  height: calc(100% - 100vw);
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  margin: 10px 25px;
+}
+
+.log {
+  border: 4px solid black;
+  height: 98%;
+  overflow-y: auto;
+  margin: 25px;
+  margin-top: 1px;
+}
+
+.log * {
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+
+.hidden {
+  visibility: hidden;
+}
+
+.pawn {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pawn img {
+  height: 80%;
+}
+
+.north-pawn {
+  // transform: rotate(90deg);
+}
+
+.east-pawn {
+  transform: rotate(90deg);
+}
+
+.south-pawn {
+  transform: rotate(180deg);
+}
+
+.west-pawn {
+  transform: rotate(-90deg);
+}

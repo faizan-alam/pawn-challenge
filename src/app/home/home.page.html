@@ -1,0 +1,32 @@
+<section class="content">
+  <img class="table-bg" src="../assets/table.jpg" alt="">
+  <div class="cardinal-directions north">NORTH</div>
+  <div class="cardinal-directions east">EAST</div>
+  <div class="cardinal-directions south">SOUTH</div>
+  <div class="cardinal-directions west">WEST</div>
+  <div class="grid">
+    <div class="pawn" [ngClass]="{'hidden': !pawn.isOnTheBoard}">
+      <img id="pawn-img" [src]="pawn.imgUrl" alt="pawn"
+        [ngClass]="{'north-pawn': pawn.direction === 'NORTH', 'east-pawn': pawn.direction === 'EAST', 'west-pawn': pawn.direction === 'WEST', 'south-pawn': pawn.direction === 'SOUTH' }">
+    </div>
+  </div>
+</section>
+<section class="utils">
+  <div class="controls">
+    <ion-item>
+      <ion-label>Command</ion-label>
+      <ion-input id="input-command" [(ngModel)]="inputValue" (keyup)="onKeyPress($event)" clearInput="true"></ion-input>
+      <ion-button id="run-btn" (click)="runCommand()" expand="block" fill="clear" color="success">
+        run
+      </ion-button>
+      <ion-button (click)="clear()" expand="block" fill="clear" color="danger">
+        clear
+      </ion-button>
+    </ion-item>
+  </div>
+  <div class="log">
+    <div *ngFor="let log of pawn.logMoves">
+      {{log}}
+    </div>
+  </div>
+</section>
